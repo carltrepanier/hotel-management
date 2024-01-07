@@ -64,7 +64,7 @@ export default function Footer() {
 			<div
 				className={`${
 					darkTheme ? 'bg-tertiary-light' : 'bg-tertiary-dark'
-				} 'h-10 md:h-[70px] mt-16 w-full bottom-0 left-0'`}
+				} h-10 md:h-[70px] mt-16 w-full bottom-0 left-0`}
 			/>
 		</footer>
 	);
