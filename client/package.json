@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/vision": "^3.23.4",
     "next": "14.0.4",
     "next-sanity": "^7.0.7",
     "react": "^18",
