@@ -1,4 +1,4 @@
-import Header from '@/components/Header/Header';
+import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
 
@@ -29,7 +29,7 @@ export default function RootLayout({
 			<body className={poppins.className}>
 				<ThemeProvider>
 					<main className='font-normal'>
-						<Header />
+						<Navbar />
 						{children}
 						<Footer />
 					</main>

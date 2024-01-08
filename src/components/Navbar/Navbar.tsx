@@ -6,7 +6,7 @@ import { ThemeContext } from '@/context/themeContext';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
-export default function Header() {
+export default function Navbar() {
 	const { darkTheme, setDarkTheme } = useContext(ThemeContext);
 
 	return (
@@ -50,6 +50,7 @@ export default function Header() {
 				</ul>
 			</div>
 
+			{/* À revoir */}
 			<ul className='flex items-center justify-between w-full md:w-1/3 mt-4'>
 				<li
 					className={`${
