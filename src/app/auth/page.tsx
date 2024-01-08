@@ -92,8 +92,8 @@ export default function Auth() {
 					<p className='mt-6'>OR</p>
 
 					<span className='inline-flex items-center mt-3'>
-						<AiFillGithub className='mr-3 text-4xl hover:text-[40px] text-black dark:text-white cursor-pointer' />{' '}
-						<FcGoogle className='text-4xl hover:text-[40px] cursor-pointer' />
+						<AiFillGithub className='mr-3 text-4xl scale-animation text-black dark:text-white cursor-pointer' />{' '}
+						<FcGoogle className='text-4xl scale-animation cursor-pointer' />
 					</span>
 
 					<button

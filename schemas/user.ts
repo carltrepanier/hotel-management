@@ -16,11 +16,9 @@ export const user = {
 			// hidden: true,
 		}),
 		defineField({
-			name: 'avatar',
-			title: 'Avatar',
-			type: 'image',
-			description: 'Avatar of the user',
-			readOnly: true,
+			name: 'image',
+			title: 'Image',
+			type: 'url',
 		}),
 		defineField({
 			name: 'name',
