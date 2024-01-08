@@ -25,7 +25,6 @@ export const user = {
 			title: 'Name',
 			type: 'string',
 			description: 'Name of the user',
-			validation: (Rule) => Rule.required(),
 			readOnly: true,
 		}),
 		defineField({
@@ -33,14 +32,17 @@ export const user = {
 			title: 'Email',
 			type: 'string',
 			description: 'Email of the user',
-			validation: (Rule) => Rule.required(),
 			readOnly: true,
+		}),
+		defineField({
+			name: 'emailVerified',
+			type: 'datetime',
+			hidden: true,
 		}),
 		defineField({
 			name: 'password',
 			title: 'Password',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
 			hidden: true,
 		}),
 		defineField({

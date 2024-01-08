@@ -1,9 +1,14 @@
 'use client';
 
 import { ThemeContext } from '@/context/themeContext';
-import { ChangeEvent, FormEvent, useContext, useState } from 'react';
+import { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
+import { signUp } from 'next-auth-sanity/client';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+import toast from 'react-hot-toast';
 
 const defaultFormData = {
 	name: '',
@@ -19,12 +24,38 @@ export default function Auth() {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
+	const { data: session } = useSession();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (session) {
+			router.push('/');
+		}
+	}, [router, session]);
+
+	const handleLogin = async () => {
+		try {
+			await signIn();
+			router.push('/');
+		} catch (error) {
+			toast.error('Something went wrong! Please try again.');
+			console.log(error);
+		}
+	};
+
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		try {
-			console.log(formData);
+			const user = await signUp(formData);
+
+			if (user) {
+				toast.success(
+					'Account created successfully! Please login to continue.'
+				);
+			}
 		} catch (error) {
+			toast.error('Something went wrong! Please try again.');
 			console.log(error);
 		} finally {
 			setFormData(defaultFormData);
@@ -61,7 +92,7 @@ export default function Auth() {
 							name='email'
 							value={formData.email}
 							placeholder='name@example.com'
-							pattern='[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+							pattern='[a-z0-9.]+@[a-z0-9.-]+\.[a-z]{2,}$'
 							required
 							className={inputStyle}
 							onChange={handleInputChange}
@@ -92,11 +123,18 @@ export default function Auth() {
 					<p className='mt-6'>OR</p>
 
 					<span className='inline-flex items-center mt-3'>
-						<AiFillGithub className='mr-3 text-4xl scale-animation text-black dark:text-white cursor-pointer' />{' '}
-						<FcGoogle className='text-4xl scale-animation cursor-pointer' />
+						<AiFillGithub
+							onClick={handleLogin}
+							className='mr-3 text-4xl scale-animation text-black dark:text-white cursor-pointer'
+						/>{' '}
+						<FcGoogle
+							onClick={handleLogin}
+							className='text-4xl scale-animation cursor-pointer'
+						/>
 					</span>
 
 					<button
+						onClick={handleLogin}
 						className={`${
 							darkTheme
 								? 'text-tertiary-light hover:text-tertiary-dark'
