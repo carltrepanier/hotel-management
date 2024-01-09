@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export const heading1 = (
+export const component1 = (
 	<>
 		<h1 className='font-heading mb-6'>Explore Our Exquisite Hotel</h1>
 
@@ -13,7 +13,7 @@ export const heading1 = (
 	</>
 );
 
-export const heading2 = (
+export const component2 = (
 	<>
 		<div className='md:grid hidden gap-8 grid-cols-1'>
 			<div className='rounded-2xl overflow-hidden h-48'>

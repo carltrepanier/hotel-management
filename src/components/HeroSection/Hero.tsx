@@ -1,7 +1,7 @@
-import { heading1, heading2 } from './ServerComponent';
+import { component1, component2 } from './ServerComponent';
 
 import ClientComponent from './ClientComponent';
 
 export default function Hero() {
-	return <ClientComponent heading1={heading1} heading2={heading2} />;
+	return <ClientComponent component1={component1} component2={component2} />;
 }

@@ -3,15 +3,15 @@
 import CountUpNumber from '../CountUpNumber/CountUpNumber';
 
 type Props = {
-	heading1: React.ReactNode;
-	heading2: React.ReactNode;
+	component1: React.ReactNode;
+	component2: React.ReactNode;
 };
 
-export default function ClientComponent({ heading1, heading2 }: Props) {
+export default function ClientComponent({ component1, component2 }: Props) {
 	return (
 		<section className='flex px-4 items-center gap-12 container mx-auto'>
 			<div className='py-10 h-full'>
-				{heading1}
+				{component1}
 
 				<div className='flex justify-between mt-12'>
 					<div className='flex flex-col gap-3 items-center justify-center'>
@@ -29,7 +29,7 @@ export default function ClientComponent({ heading1, heading2 }: Props) {
 				</div>
 			</div>
 
-			{heading2}
+			{component2}
 		</section>
 	);
 }
