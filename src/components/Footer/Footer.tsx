@@ -21,7 +21,7 @@ export default function Footer() {
 					Hotelzzz
 				</Link>
 
-				<h4 className='font-semibold text-[40px] py-6'>Contact</h4>
+				<h4 className='font-semibold md:text-[40px] text-2xl py-6'>Contact</h4>
 
 				<div className='flex flex-col flex-wrap md:flex-row gap-16 items-center justify-between text-center'>
 					<div className='flex-1'>
