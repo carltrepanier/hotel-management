@@ -16,7 +16,7 @@ export default function ClientComponent({ component1, component2 }: Props) {
 				<div className='flex justify-between mt-12'>
 					<div className='flex flex-col gap-3 items-center justify-center'>
 						<p className='text-md md:text-xl text-center'>Basic Room</p>
-						<CountUpNumber endValue={100} duration={5000} />
+						<CountUpNumber endValue={120} duration={5000} />
 					</div>
 					<div className='flex flex-col gap-3 items-center justify-center'>
 						<p className='text-md md:text-xl text-center'>Luxury Room</p>
