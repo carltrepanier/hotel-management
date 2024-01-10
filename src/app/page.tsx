@@ -1,13 +1,21 @@
-import Hero from '@/components/HeroSection/Hero';
+import { getFeaturedRoom } from '@/libs/apis';
 
-export default function Home() {
+import FeaturedRoom from '@/components/FeaturedRoom/FeaturedRoom';
+import Gallery from '@/components/Gallery/Gallery';
+import Hero from '@/components/HeroSection/Hero';
+import NewsLetter from '@/components/NewsLetter/NewsLetter';
+import PageSearch from '@/components/PageSearch/PageSearch';
+
+export default async function Home() {
+	const featuredRoom = await getFeaturedRoom();
+
 	return (
 		<>
 			<Hero />
-			{/* Page search */}
-			{/* Featured Room */}
-			{/* Gallery */}
-			{/* News Letter */}
+			<PageSearch />
+			<FeaturedRoom featuredRoom={featuredRoom} />
+			<Gallery />
+			<NewsLetter />
 		</>
 	);
 }
